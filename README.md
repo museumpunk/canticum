@@ -22,9 +22,9 @@
 
 Он готов к работе, но нужно добавить ключи и настроить окружение.
 
-Настройка шаг за шагом
+# Настройка шаг за шагом
 
-Регистрация бота в Telegram:
+## Регистрация бота в Telegram:
 
 Откройте Telegram и найдите @BotFather.
 Напишите /start, затем /newbot.
@@ -33,39 +33,43 @@
 Вставьте токен в код: telegram_token="ВАШ_TELEGRAM_TOKEN".
 
 
-Получение ключей API:
+## Получение ключей API:
 
-Сбер Салют:
+### Сбер Салют:
 Зарегистрируйтесь в Salute Studio.
+https://developers.sber.ru/studio/workspaces/
 Создайте проект, выберите "SaluteSpeech" и получите client_id и client_secret.
 Вставьте в код: client_id="ВАШ_CLIENT_ID", client_secret="ВАШ_CLIENT_SECRET".
 Freemium-тариф даёт 100 минут распознавания бесплатно в месяц.
 
 
-DeepSeek:
-Зарегистрируйтесь на DeepSeek.
+### DeepSeek:
+Зарегистрируйтесь на DeepSeek Platform
+Пополните баланс, - он очень дешевый, так что можно на пару долларов
+Можно рублями через Плати Маркет https://plati.market/search/DEEP%20SEEK%20api
+https://platform.deepseek.com/
 Получите API-ключ и вставьте в код: DEEPSEEK_API_KEY="ВАШ_КЛЮЧ".
 
 
-
-
-Скачивание сертификата Сбер Салют:
+##Скачивание сертификата Сбер Салют:
 
 Перейдите в документацию Сбер Салют.
-Найдите раздел "Аутентификация" и скачайте файл russian_trusted_root_ca.cer.
+https://www.sberbank.ru/ru/person/kibrary/materialy-po-temam/sertifikaty-tls
+скачайте файл russian_trusted_root_ca.cer.
 Сохраните его в папке проекта (например, C:/path/to/russian_trusted_root_ca.cer).
 Укажите путь в коде: CERT_PATH="путь/к/russian_trusted_root_ca.cer".
 
 
-Скачивание шрифта DejaVu:
+## Скачивание шрифта DejaVu:
 
 Бот использует шрифт DejaVuSans для генерации PDF с поддержкой кириллицы.
 Скачайте DejaVuSans.ttf с официального сайта или FontSquirrel.
+[https://github.com/dejavu-fonts/dejavu-fonts](https://dejavu-fonts.github.io/)
 Поместите файл в папку проекта.
 Убедитесь, что код указывает на файл: pdf.add_font("DejaVu", "", "DejaVuSans.ttf", uni=True).
 
 
-Установка зависимостей:
+## Установка зависимостей:
 
 Установите Python 3.8+.
 Установите библиотеки:pip install aiohttp python-telegram-bot sqlite3 fpdf pydub ffmpeg-python
@@ -76,13 +80,11 @@ DeepSeek:
 Добавьте ffmpeg в PATH или установите через пакетный менеджер (например, brew install ffmpeg на macOS или apt-get install ffmpeg на Linux).
 
 
-
-
-Запуск бота:
+## Запуск бота:
 
 Откройте терминал в VSCode.
-Перейдите в папку с bot.py: cd путь/к/папке.
-Запустите: python bot.py.
+Перейдите в папку с telegram_canticum_bot.py: cd путь/к/папке.
+Запустите: python telegram_canticum_bot.py.
 Отправьте боту аудио (до 1 часа) — он вернёт PDF, саммари и аналитику эмоций.
 
 
